@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+        <property name="connection.url">jdbc:sqlite:sample.db</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.pool_size">1</property>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+        <!--<mapping class="model.Client"/>-->
+
+        <!-- DB schema will be updated if needed -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <mapping class="model.Client"/>
+        <mapping class="model.Phone"/>
+
+    </session-factory>
+</hibernate-configuration>
